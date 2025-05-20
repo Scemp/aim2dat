@@ -77,7 +77,7 @@ class _KindPattern(_BasePattern):
             for line in m.string[m.start() : m.end()].splitlines()[1:-1]:
                 line_sp = line.split()
                 if line_sp[0].upper() == "ELEMENT":
-                    element = line_sp[1]
+                    element = line_sp[1].strip('"')
                     break
             output["kind_info"][kind] = element
 
